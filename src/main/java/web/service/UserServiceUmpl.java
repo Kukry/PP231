@@ -12,13 +12,13 @@ public class UserServiceUmpl implements UserService {
     @Autowired
     private UserDao userDao;
 
-    @Transactional
+    @Transactional(readOnly = true)
     @Override
     public List<User> allUsers() {
         return userDao.allUsers();
     }
 
-    @Transactional
+    @Transactional(readOnly = true)
     @Override
     public User showUser(int id) {
         return userDao.showUser(id);

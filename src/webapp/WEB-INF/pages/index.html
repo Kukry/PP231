@@ -8,10 +8,8 @@
     <div th:each="user : ${users}">
         <a th:href="@{/user?id={id}(id=${user.getId()})}" th:text="${user.getName()}">users</a>
         <a th:href="@{/edit?id={id}(id=${user.getId()})}">Edit</a>
-        <form th:method="DELETE" th:action="@{/?id={id}(id=${user.getId()})}">
-            <input type="submit" value="Delete">
-            <hr>
-        </form>
+        <a th:href="@{/delete?id={id}(id=${user.getId()})}">Delete</a>
+        <hr>
     </div>
     <br>
     <hr>
